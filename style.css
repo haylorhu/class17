@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+kbd{
+    width:80px;
+    height: 60px;
+    background: linear-gradient(to bottom, #2b2b2b 1%,#111111 100%);
+    border-radius: 8px;
+    border: 1px solid rgb(60, 60, 60);
+    box-shadow: 0px 0px 1px rgb(25, 25, 25), 0px 2px 1px rgb(2, 2, 2),0px 2px 0px rgb(2, 2, 2);
+    display: inline-block;
+    margin:3px; 
+    position: relative;
+    color: white;
+    font-size: 20px;
+}
+body{
+    height: 100vh;
+
+}
+section{
+    text-align: center;
+    height: 100vh;
+    background: url(/img/bk.jpg) center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    display: inline-block;
+
+}
+main>div:nth-child(2){
+    margin-left: 5px;
+}
+main>div:nth-child(3){
+    w
+    margin-left: 10px;
+}
+kbd >.button{
+    width: 41px;
+    height: 20px;
+    display: none;
+
+}
+kbd:hover >button{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+kbd >img{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}

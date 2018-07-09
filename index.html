@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+    <section>
+        
+        <main id="KB">
+    
+        </main>
+    </section>
+    <script>
+            key={
+               0:['q','w','e','r','t','y','u','i','o','p',],
+               1:['a','s','d','f','g','h','j','k','l',],
+               2:['z','x','c','v','b','n','m',],
+               length:3
+            }
+            Hash={
+                'q':'qq.com',
+                'w':'weibo.com',
+                'e':'ele',
+                'r':'renren.com',
+                't':'tianya.com',
+                'y':'uc.com',
+                'u':'iqiyi',
+                'i':'opera',
+            }
+            hashIlocalStorage=JSON.parse(localStorage.getItem('qqqqq')||'null')
+            if(hashIlocalStorage){
+                Hash=hashIlocalStorage
+            }
+            index=0
+            while (index<key.length) {
+                divxxx=document.createElement('div')
+                KB.appendChild(divxxx)
+                index2=0
+                while (index2<key[index].length) {
+                    kbdxxx=document.createElement('kbd')
+                    kbdxxx.textContent=key[index][index2]
+                    buttonxxx=document.createElement('button')
+                    buttonxxx.className='button'
+                    buttonxxx.textContent=('E')
+                    buttonxxx.id=key[index][index2]
+                    imgxxx=document.createElement('img')
+                    if(Hash[key[index][index2]]){
+                        imgxxx.src='http://'+Hash[key[index][index2]]+'/favicon.ico'
+                    }else{
+                        imgxxx.src='https://i.loli.net/2018/07/10/5b43a0359e813.jpg'
+
+                    }
+                    imgxxx.onerror=function(xxx){
+                        xxx.target.src='https://i.loli.net/2018/07/10/5b43a0359e813.jpg'
+                    }
+                    
+                    kbdxxx.appendChild(imgxxx)
+                    divxxx.appendChild(kbdxxx)
+                    kbdxxx.appendChild(buttonxxx)
+                    buttonxxx.onclick=function(qqqqq){
+                        key=qqqqq.target.id
+                        x=prompt('给我一个网址')
+                        Hash[key]=x
+                        localStorage.setItem('aaa',JSON.stringify(Hash))
+                        console.log(Hash)
+
+                    }
+
+                    
+                    index2++
+                }
+               
+                index=index+1
+            }
+            document.onkeypress=function(zzz){
+                key=zzz['key']
+                website=Hash[key]
+                window.open('http://'+website,'blank')
+            }
+
+        </script>
+</body>
+</html>
